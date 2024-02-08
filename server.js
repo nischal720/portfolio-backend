@@ -15,6 +15,10 @@ app.use(bodyParser.json());
 // Routes
 app.use("/api/admin", adminRoutes);
 
+app.use("/", (req, res) => {
+  res.json("Welcome to server");
+});
+
 //error handler
 app.use(notFounnd);
 app.use(errorHandler);
