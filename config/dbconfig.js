@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const clientOptions = {
+  useUnifiedTopology: true,
   serverApi: { version: "1", strict: true, deprecationErrors: true },
 };
 async function dbRun() {
@@ -12,7 +13,7 @@ async function dbRun() {
       "Pinged your deployment. You successfully connected to MongoDB!"
     );
   } catch (err) {
-    console.log(err);
+    console.error("Error connecting to MongoDB:", err);
   } finally {
     // Ensures that the client will close when you finish/error
     await mongoose.disconnect();
