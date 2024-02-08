@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const dbRun = require("./config/dbconfig");
 const { notFounnd, errorHandler } = require("./middlewares/errorHandler");
 const adminRoutes = require("./routes/admin.routes");
-require("dotenv").config();
+const env = require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 9000;
 

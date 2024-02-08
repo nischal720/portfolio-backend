@@ -2,6 +2,7 @@ const errorHandler = (err, req, res, next) => {
   // Check if the error has a status code, otherwise default to 500 (Internal Server Error)
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
   // Send the status code and error message in the response
+  console.error(err.message)
   res.status(statusCode).json({
     error: {
       status: statusCode,
