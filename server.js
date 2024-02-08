@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const dbRun = require("./config/dbconfig");
 const { notFounnd, errorHandler } = require("./middlewares/errorHandler");
 const adminRoutes = require("./routes/admin.routes");
+const userRoutes = require("./routes/user.routes");
 const env = require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 9000;
@@ -14,10 +15,8 @@ app.use(bodyParser.json());
 
 // Routes
 app.use("/api/admin", adminRoutes);
+app.use("/api", userRoutes);
 
-app.use("/", (req, res) => {
-  res.json("Welcome to server");
-});
 
 //error handler
 app.use(notFounnd);

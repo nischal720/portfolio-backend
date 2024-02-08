@@ -19,7 +19,6 @@ const getHommeRecords = asyncHandler(async (req, res) => {
       return {
         welcomeMeassage: d.welcomeMessage,
         description: d.description,
-        id: d.id,
       };
     });
     res.json(...responseData);
